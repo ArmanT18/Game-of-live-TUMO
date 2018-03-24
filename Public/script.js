@@ -3,6 +3,7 @@ var side = 10;
 var xotArr = [];
 var eatArr = [];
 var gaylArr = [];
+var arjArr = [];
 var vorsArr = [];
 
 
@@ -10,8 +11,9 @@ var vorsArr = [];
 var bardz = 100;
 var layn = 100;
 var grassCount = 300;
-var eatgrassCount = 300;
-var gaylCount = 15;
+var eatgrassCount = 80;
+var gaylCount = 20;
+var arjCount = 10;
 var vorsordCount = 20;
 var matrix = [];
 
@@ -44,6 +46,12 @@ for (var i = 0; i < gaylCount; i++) {
     matrix[y][x] = 3;
 }
 
+for (var i = 0; i < arjCount; i++) {
+    var x = Math.floor(random(0, layn));
+    var y = Math.floor(random(0, bardz));
+    matrix[y][x] = 5;
+}
+
 for (var i = 0; i < vorsordCount; i++) {
     var x = Math.floor(random(0, layn));
     var y = Math.floor(random(0, bardz));
@@ -70,6 +78,9 @@ for (var j = 0; j < matrix[i].length; j++) {
  } else if (matrix[i][j] == 3) {
      var gayl = new Gayl(j, i, 3);
      gaylArr.push(gayl);
+ } else if (matrix[i][j] == 5) {
+     var arj = new Arj(j, i, 5);
+     gaylArr.push(gayl);
  } else if (matrix[i][j] == 4) {
      var vors = new  Vorsord(j, i, 4);
      vorsArr.push(vors);
@@ -84,7 +95,7 @@ background('#acacac');
 for (var i = 0; i < matrix.length; i++) {
 for (var j = 0; j < matrix[i].length; j++) {
     if (matrix[i][j] == 1) {
-     fill("green");
+     fill("white");
      rect(j * side, i * side, side, side);
   } else if (matrix[i][j] == 2) {
      fill("orange");
@@ -98,6 +109,9 @@ for (var j = 0; j < matrix[i].length; j++) {
   } else if (matrix[i][j] == 4) {
      fill('blue');
      rect(j * side, i * side, side, side);
+  } else if (matrix[i][j] == 5) {
+     fill('brown');
+     rect(j * side, i * side, side, side);   
       }
    }
 }
