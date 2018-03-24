@@ -10,11 +10,11 @@ var vorsArr = [];
 
 var bardz = 100;
 var layn = 100;
-var grassCount = 300;
+var grassCount = 150;
 var eatgrassCount = 80;
 var gaylCount = 20;
 var arjCount = 10;
-var vorsordCount = 20;
+var vorsordCount = 8;
 var matrix = [];
 
 for(var i = 0; i < bardz; i++){
@@ -80,7 +80,7 @@ for (var j = 0; j < matrix[i].length; j++) {
      gaylArr.push(gayl);
  } else if (matrix[i][j] == 5) {
      var arj = new Arj(j, i, 5);
-     gaylArr.push(gayl);
+     arjArr.push(arj);
  } else if (matrix[i][j] == 4) {
      var vors = new  Vorsord(j, i, 4);
      vorsArr.push(vors);

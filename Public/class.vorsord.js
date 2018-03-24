@@ -6,9 +6,9 @@ class Vorsord extends Supers {
 
     kill() {
 
-        var gishCord = this.getDirections(3);
+        var vorsCord = this.getDirections(3);
 
-        var cord = random(gishCord);
+        var cord = random(vorsCord);
 
         if (cord) {
             this.multiply++;
@@ -33,9 +33,9 @@ class Vorsord extends Supers {
                 this.multiply = 0;
             }
 
-        } else {
-            this.move();
-            this.energy--;
+            } else {
+                this.move();
+                this.energy--;
             if (this.energy < 3) {
                 this.die();
                 //this.energy = 10;
@@ -52,8 +52,8 @@ class Vorsord extends Supers {
 
             this.multiply++;
 
-            var norgishatich = new Gishatich(x, y, this.index);
-            eatArr.push(norgishatich);
+            var norvorsord = new Vorsord(x, y, this.index);
+            eatArr.push(norvorsord);
 
             matrix[y][x] = 3;
             this.multiply = 0;
@@ -61,9 +61,9 @@ class Vorsord extends Supers {
     }
     die() {
         matrix[this.y][this.x] = 0;
-        for (var i in gishArr) {
-            if (this.x == gishArr[i].x && this.y == gishArr[i].y) {
-                gishArr.splice(i, 1);
+        for (var i in vorsArr) {
+            if (this.x == vorsArr[i].x && this.y == vorsArr[i].y) {
+                vorsArr.splice(i, 1);
             }
         }
     }
