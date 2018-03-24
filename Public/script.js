@@ -2,7 +2,7 @@ var matrix = []
 var side = 10;
 var xotArr = [];
 var eatArr = [];
-var gishArr = [];
+var gaylArr = [];
 var vorsArr = [];
 
 
@@ -11,7 +11,7 @@ var bardz = 100;
 var layn = 100;
 var grassCount = 300;
 var eatgrassCount = 300;
-var gishatichCount = 15;
+var gaylCount = 15;
 var vorsordCount = 20;
 var matrix = [];
 
@@ -38,7 +38,7 @@ for (var i = 0; i < eatgrassCount; i++) {
     matrix[y][x] = 2;
 }
 
-for (var i = 0; i < gishatichCount; i++) {
+for (var i = 0; i < gaylCount; i++) {
     var x = Math.floor(random(0, layn));
     var y = Math.floor(random(0, bardz));
     matrix[y][x] = 3;
@@ -68,8 +68,8 @@ for (var j = 0; j < matrix[i].length; j++) {
      var grass = new Grass(j, i, 1);
      xotArr.push(grass);
  } else if (matrix[i][j] == 3) {
-     var gish = new Gishatich(j, i, 3);
-     gishArr.push(gish);
+     var gayl = new Gayl(j, i, 3);
+     gaylArr.push(gayl);
  } else if (matrix[i][j] == 4) {
      var vors = new  Vorsord(j, i, 4);
      vorsArr.push(vors);
@@ -112,8 +112,8 @@ for (var i in eatArr) {
 eatArr[i].eat();
 }
 
-for (var i in gishArr) {
-gishArr[i].eat();
+for (var i in gaylArr) {
+gaylArr[i].eat();
    }
 
 for (var i in vorsArr) {

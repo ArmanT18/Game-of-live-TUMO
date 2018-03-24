@@ -1,4 +1,4 @@
-class Gishatich extends Supers {
+class Gayl extends Supers {
     constructor(x, y, ind, energy) {
         super(x, y, ind, energy);
         this.energy == 5;
@@ -6,9 +6,9 @@ class Gishatich extends Supers {
 
     eat() {
 
-        var gishCord = this.getDirections(2);
+        var gaylCord = this.getDirections(2);
 
-        var cord = random(gishCord);
+        var cord = random(gaylCord);
 
         if (cord) {
             this.multiply++;
@@ -52,8 +52,8 @@ class Gishatich extends Supers {
 
             this.multiply++;
 
-            var norgishatich = new Gishatich(x, y, this.index);
-            eatArr.push(norgishatich);
+            var norgayl = new Gayl(x, y, this.index);
+            eatArr.push(norgayl);
 
             matrix[y][x] = 2;
             this.multiply = 0;
@@ -61,9 +61,9 @@ class Gishatich extends Supers {
     }
     die() {
         matrix[this.y][this.x] = 0;
-        for (var i in gishArr) {
-            if (this.x == gishArr[i].x && this.y == gishArr[i].y) {
-                gishArr.splice(i, 1);
+        for (var i in gaylArr) {
+            if (this.x == gaylArr[i].x && this.y == gaylArr[i].y) {
+                gaylArr.splice(i, 1);
             }
         }
     }
