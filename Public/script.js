@@ -95,7 +95,7 @@ background('#acacac');
 for (var i = 0; i < matrix.length; i++) {
 for (var j = 0; j < matrix[i].length; j++) {
     if (matrix[i][j] == 1) {
-     fill("white");
+     fill("green");
      rect(j * side, i * side, side, side);
   } else if (matrix[i][j] == 2) {
      fill("orange");
