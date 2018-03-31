@@ -101,6 +101,7 @@ function draw() {
         frameCount === 0;
     }
     background('#acacac');
+    
 
     
     for (var i = 0; i < matrix.length; i++) {
