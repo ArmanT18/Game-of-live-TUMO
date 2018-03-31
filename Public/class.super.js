@@ -8,6 +8,7 @@ class Supers {
     }
 
 
+
         newDirections() {
             this.directions = [
                 [this.x - 1, this.y - 1],
@@ -37,8 +38,10 @@ class Supers {
             return found;
         }
     
-        move(index) {
-            var emptyCord = this.getDirections(0);
+        move() {
+            var acord = 0;
+            var xcord = 1;
+            var emptyCord  = this.getDirections(acord || xcord);
             var cord = random(emptyCord);
     
             if (cord) {
@@ -46,22 +49,18 @@ class Supers {
                 var y = cord[1];
     
                 matrix[y][x] = this.index;
-    
-                matrix[this.y][this.x] = 0;
-    
+            if (emptyCord = acord){
+                matrix[this.y][this.x] = acord;
+            }
+            else if(emptyCord = xcord){
+                matrix[this.y][this.x] = xcord;
+            }
+
                 this.x = x;
                 this.y = y;
     
             }
         }        
-
-
-
-
-
-
-
-
 
 
 

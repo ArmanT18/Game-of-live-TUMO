@@ -5,10 +5,10 @@ class Eatgrass extends Supers {
     }
 
 
+
     eat() {
 
         var emptyCord = this.getDirections(1);
-
         var cord = random(emptyCord);
 
         if (cord) {
@@ -39,10 +39,14 @@ class Eatgrass extends Supers {
             this.energy--;
             if (this.energy < 3) {
                 this.die();
-                //this.energy = 10;
             }
         }
     }
+
+
+
+
+
 
     mul() {
         var emptyCord = this.getDirections(0);
@@ -61,6 +65,13 @@ class Eatgrass extends Supers {
             this.multiply = 0;
         }
     }
+
+
+
+
+
+
+
     die() {
         matrix[this.y][this.x] = 0;
         for (var i in eatArr) {
@@ -69,5 +80,4 @@ class Eatgrass extends Supers {
             }
         }
     }
-
 }

@@ -1,13 +1,11 @@
 class Arj extends Supers {
-    constructor(x, y, ind, energy) {
-        super(x, y, ind, energy);
-        this.energy == 5;
+    constructor(x, y, ind) {
+        super(x, y, ind, 100);
     }
 
     eat() {
 
         var arjCord = this.getDirections(2);
-
         var cord = random(arjCord);
 
         if (cord) {
@@ -16,7 +14,7 @@ class Arj extends Supers {
             var x = cord[0];
             var y = cord[1];
 
-            matrix[y][x] = 3;
+            matrix[y][x] = 5;
             matrix[this.y][this.x] = 0;
 
             this.x = x;
@@ -34,11 +32,11 @@ class Arj extends Supers {
             }
 
         } else {
+            
             this.move();
             this.energy--;
             if (this.energy < 3) {
                 this.die();
-                //this.energy = 10;
             }
         }
     }
@@ -48,7 +46,7 @@ class Arj extends Supers {
         var cord = random(emptyCord);
         if (cord) {
             var x = cord[0];
-            var y = cord[2];
+            var y = cord[1];
 
             this.multiply++;
 

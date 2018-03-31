@@ -1,13 +1,14 @@
 class Gayl extends Supers {
     constructor(x, y, ind, energy) {
         super(x, y, ind, energy);
-        this.energy == 5;
+        this.energy == 20;
     }
+
+
 
     eat() {
 
         var gaylCord = this.getDirections(2);
-
         var cord = random(gaylCord);
 
         if (cord) {
@@ -38,17 +39,22 @@ class Gayl extends Supers {
             this.energy--;
             if (this.energy < 3) {
                 this.die();
-                //this.energy = 10;
             }
         }
     }
+
+
+
+
+
+
     mul() {
         var emptyCord = this.getDirections(0);
 
         var cord = random(emptyCord);
         if (cord) {
             var x = cord[0];
-            var y = cord[2];
+            var y = cord[1];
 
             this.multiply++;
 
@@ -59,6 +65,12 @@ class Gayl extends Supers {
             this.multiply = 0;
         }
     }
+
+
+
+
+
+
     die() {
         matrix[this.y][this.x] = 0;
         for (var i in gaylArr) {
@@ -67,5 +79,4 @@ class Gayl extends Supers {
             }
         }
     }
-
 }
